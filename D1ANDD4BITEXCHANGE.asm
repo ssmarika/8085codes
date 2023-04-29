@@ -1,0 +1,32 @@
+	MVI C, 03
+	LXI H,1000
+	LXI D,2000
+J2:	MOV A,M
+	ANI 12
+	CPI 00
+	JZ J1
+	CPI 12
+	JZ J1
+	MOV A,M
+	XRI 12
+	STAX D
+	INX H
+	INX D
+	DCR C
+	JNZ J2
+	HLT
+
+J1:	MOV A,M
+	STAX D
+	INX H
+	INX D
+	DCR C
+	JNZ J2
+	HLT
+
+
+#ORG 1000
+#DB 81,10,91
+	
+	
+	
